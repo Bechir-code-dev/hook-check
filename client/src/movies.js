@@ -3,7 +3,7 @@ const movies = [
     title:"Wrath of Man", 
     description:"A mysteriously stoic character", 
     posterURL:"https://m.media-amazon.com/images/M/MV5BODE4ZGY4OTktNDBjMy00NGVkLTk5YWUtNjA3NGU3MTA5NzM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", 
-    rating: 4.5 
+    rating: 3 
 },
 {
     title:"Mission Impossible Fallout", 

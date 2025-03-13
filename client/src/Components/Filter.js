@@ -1,6 +1,55 @@
 import React from "react";
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import ReactStars from 'react-stars';
 
-const Filter = () => {
-   
+
+const Filter = ({setTitle,setRating}) => {
+    const ratingChanged = (newRating) => {
+        setRating(newRating)
+      }
+   return (
+    <>
+    <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+        Movie title
+        </InputGroup.Text>
+        <Form.Control
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          onChange={(e)=>setTitle(e.target.value)}
+        />
+      </InputGroup>
+
+      <InputGroup className="mb-3">
+      <InputGroup.Text id="inputGroup-sizing-default">
+        Movie title
+        </InputGroup.Text>
+        <ReactStars
+  count={5}
+  onChange={ratingChanged}
+  size={40}
+  color2={'#ffd700'}
+  half={true}
+  edit = {true} />
+     </InputGroup>
+
+    </>
+   )
 }
 export default Filter;
+
+
+
+
+
+/* <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+          Movie Rate
+        </InputGroup.Text>
+        <Form.Control
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          onChange={(e)=>setRating(e.target.value)}
+        />
+      </InputGroup> */

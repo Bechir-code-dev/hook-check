@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import MovieCard from "./MovieCard";
-import movies from "../movies";
 
-const MovieList = () => {
-    const [film,setFilm]= useState (movies);
-   return (
+const MovieList = ({ ourMovies, title, rating }) => {
+  return (
     <>
-    {film.map(movie =>
-        <MovieCard {...movie}/>
-    )}
+      {ourMovies
+        .filter((movie) =>
+          movie.title.toUpperCase().includes(title.toUpperCase())
+        )
+        .filter((movie) => movie.rating>=rating)
+        .map((movie) => (
+          <MovieCard {...movie} />
+        ))}
     </>
-   )
-}
+  );
+};
 export default MovieList;

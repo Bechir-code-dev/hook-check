@@ -1,13 +1,25 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieList from './Components/MovieList';
+import movies from './movies';
+import { useState } from 'react';
+import Filter from './Components/Filter';
+import AddNewMovie from './Components/AddNewMovie';
 
 
 
 function App() {
+ const [ourMovies,SetOurMovies] = useState(movies);
+ const [title,setTitle]=useState("");
+ const [rating,setRating]=useState(0);
   return(
     <> 
-    <MovieList></MovieList>
+    <MovieList ourMovies={ourMovies} title={title} rating={rating}/>
+    <br></br>
+    <h4>Your Film</h4>
+    <Filter setTitle={setTitle} setRating={setRating} />
+
+    <AddNewMovie/>
     </>
   )
 }
