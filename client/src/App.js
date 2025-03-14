@@ -1,43 +1,34 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieList from './Components/MovieList';
-import movies from './movies';
-import { useState } from 'react';
-import Filter from './Components/Filter';
-import AddNewMovie from './Components/AddNewMovie';
-
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MovieList from "./Components/MovieList";
+import movies from "./movies";
+import { useState } from "react";
+import Filter from "./Components/Filter";
+import AddNewMovie from "./Components/AddNewMovie";
 
 function App() {
- const [ourMovies,SetOurMovies] = useState(movies);
- const [title,setTitle]=useState("");
- const [rating,setRating]=useState(0);
-  return(
-    <> 
-    <MovieList ourMovies={ourMovies} title={title} rating={rating}/>
-    <br></br>
-    <h4>Your Film</h4>
-    <Filter setTitle={setTitle} setRating={setRating} />
+  const [ourMovies, SetOurMovies] = useState(movies);
+  const [title, setTitle] = useState("");
+  const [rating, setRating] = useState(0);
 
-    <AddNewMovie/>
+const addmovie = (newmovie) =>{
+   SetOurMovies([...ourMovies,newmovie]);
+}
+
+
+  return (
+    <>
+      <MovieList ourMovies={ourMovies} title={title} rating={rating} />
+      <br></br>
+      <h4>Your Film</h4>
+      <Filter setTitle={setTitle} setRating={setRating} />
+
+      <AddNewMovie addmovie={addmovie} />
     </>
-  )
+  );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // -- block use effect --
 // const [count,setCount] = useState(0);
@@ -51,10 +42,9 @@ export default App;
 //   </div>
 // );
 
-
-// -- block use state -- 
+// -- block use state --
 // const [quantity,setQuantity]= useState(0);
-  
+
 //   function click () {
 //     if (quantity > 0){
 //       (setQuantity(quantity-1))
