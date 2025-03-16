@@ -17,6 +17,7 @@ code {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 .movie-card {
   border: '1px solid #ccc'; 
