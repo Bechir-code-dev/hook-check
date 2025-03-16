@@ -8,9 +8,9 @@ const MovieCard = ({ title, description, posterURL, rating }) => {
     console.log(newRating);
   };
   return (
-    <>
+    <div className="movie-card">
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={posterURL} />
+        <Card.Img  variant="top" src={posterURL} className="image" />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
@@ -26,7 +26,7 @@ const MovieCard = ({ title, description, posterURL, rating }) => {
           edit={false}
         />
       </Card>
-    </>
+    </div>
   );
 };
 export default MovieCard;

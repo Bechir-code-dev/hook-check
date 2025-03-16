@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 
 const MovieList = ({ ourMovies, title, rating }) => {
   return (
-    <>
+    <div className="movie-list">
       {ourMovies
         .filter((movie) =>
           movie.title.toUpperCase().includes(title.toUpperCase())
@@ -12,7 +12,7 @@ const MovieList = ({ ourMovies, title, rating }) => {
         .map((movie) => (
           <MovieCard {...movie} />
         ))}
-    </>
+    </div>
   );
 };
 export default MovieList;

@@ -9,12 +9,13 @@ const Filter = ({setTitle,setRating}) => {
         setRating(newRating)
       }
    return (
-    <>
+    <div className="inp">
     <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
         Movie title
         </InputGroup.Text>
         <Form.Control
+          className="input"
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
           onChange={(e)=>setTitle(e.target.value)}
@@ -34,7 +35,7 @@ const Filter = ({setTitle,setRating}) => {
   edit = {true} />
      </InputGroup>
 
-    </>
+    </div>
    )
 }
 export default Filter;

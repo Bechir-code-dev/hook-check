@@ -18,12 +18,14 @@ const addmovie = (newmovie) =>{
 
   return (
     <>
+    <div className="app">
       <MovieList ourMovies={ourMovies} title={title} rating={rating} />
       <br></br>
-      <h4>Your Film</h4>
+      <h4 className="film">Your Film</h4>
       <Filter setTitle={setTitle} setRating={setRating} />
 
       <AddNewMovie addmovie={addmovie} />
+      </div>
     </>
   );
 }

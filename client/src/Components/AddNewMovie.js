@@ -48,8 +48,8 @@ const AddNewMovie = ({addmovie}) => {
 
   return (
     <>
-      <div>
-        <button onClick={openModal}>Add new Movie</button>
+      <div className="add-movie-form">
+        <button  onClick={openModal}>Add new Movie</button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -59,7 +59,7 @@ const AddNewMovie = ({addmovie}) => {
         >
           <h2 ref={(_subtitle) => (subtitle = _subtitle)}>New Movie</h2>
 
-          <h4>I am a modal</h4>
+          <h4>What is Your Movie</h4>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Movie Title</Form.Label>
@@ -104,7 +104,7 @@ const AddNewMovie = ({addmovie}) => {
             <Button variant="primary" type="submit" onClick={(e)=>{e.preventDefault(e) ; addingTheMovie(e)}}>
               Submit
             </Button>
-            <Button variant="danger" onClick={closeModal}>
+            <Button className="buttonD" variant="danger" onClick={closeModal}>
               close
             </Button>
           </Form>
