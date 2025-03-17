@@ -9,12 +9,12 @@ const MovieCard = ({ title, description, posterURL, rating }) => {
   };
   return (
     <div className="movie-card">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img  variant="top" src={posterURL} className="image" />
+      <Card style={{ width: "18rem" , height:'650px'}}>
+        <Card.Img  variant="top" src={posterURL} style={{height:'350px'}} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button className="go" variant="primary">Go somewhere</Button>
         </Card.Body>
         <ReactStars
           count={5}

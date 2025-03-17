@@ -30,16 +30,12 @@ code {
   margin-top: 20px;
   margin-bottom: auto;
 }
-.image{
-  height: 'auto';
-  width: auto;
-}
+
 
 .inp{
   display: flex;
   justify-content: center;
 } /* input */
-
 
 
 
@@ -69,4 +65,8 @@ code {
 
 .buttonD{
   margin-left: 5px;
+}
+
+.go{
+  margin-left: 60px;
 }
