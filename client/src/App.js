@@ -1,36 +1,23 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MovieList from "./Components/MovieList";
-import movies from "./movies";
-import { useState } from "react";
-import Filter from "./Components/Filter";
-import AddNewMovie from "./Components/AddNewMovie";
+import Home from "./Components/Home";
+import {Routes,Route} from 'react-router-dom';
+import TrailerDescription from "./Components/TrailerDescription";
 
 function App() {
-  const [ourMovies, SetOurMovies] = useState(movies);
-  const [title, setTitle] = useState("");
-  const [rating, setRating] = useState(0);
-
-const addmovie = (newmovie) =>{
-   SetOurMovies([...ourMovies,newmovie]);
-}
-
-
-  return (
-    <>
-    <div className="app">
-      <MovieList ourMovies={ourMovies} title={title} rating={rating} />
-      <br></br>
-      <h4 className="film">Your Film</h4>
-      <Filter setTitle={setTitle} setRating={setRating} />
-
-      <AddNewMovie addmovie={addmovie} />
-      </div>
-    </>
-  );
+ return(
+  <>
+  <Routes>
+  <Route path='/' element={<Home/>} ></Route>
+  <Route path='/trailer/:id' element={<TrailerDescription/>}></Route>
+  </Routes>
+  </>
+ )
 }
 
 export default App;
+
+
 
 // -- block use effect --
 // const [count,setCount] = useState(0);
